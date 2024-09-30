@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Welcome to your Dashboard, {{username}}</h2>
+
+<ul class="list-group mt-1">
+    <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+        <h5>List of your reservations</h5>
+    </li>
+    {% for table in history_reservations %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ table }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

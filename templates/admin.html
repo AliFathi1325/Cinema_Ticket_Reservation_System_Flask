@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+<div>
+    <form action="submit_add_film" method="POST">
+        <ul class="list-group mt-1">
+            <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+                <h5><label class="form-label mt-4">Login</label></h5>
+            </li>
+            <li class="">
+                <ul class="list-group mt-1">
+                    <div class="form-floating mt-4">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="" name="title" required>
+                        <label for="floatingInput">movie name</label>
+                    </div>
+            </li>
+            <li class="">
+                <ul class="list-group mt-1">
+                    <div class="form-floating mt-4">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="" name="director"
+                            required>
+                        <label for="floatingInput">director</label>
+                    </div>
+            </li>
+            <li class="">
+                <ul class="list-group mt-1">
+                    <div class="form-floating mt-4">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="" name="genre" required>
+                        <label for="floatingInput">genre</label>
+                    </div>
+            </li>
+            <li class="">
+                <ul class="list-group mt-1">
+                    <div class="form-floating mt-4">
+                        <input for="story" class="form-control" id="floatingInput" placeholder="" name="story" required>
+                        <label for="floatingInput">story</label>
+                    </div>
+            </li>
+            <li class="">
+                <ul class="list-group mt-1">
+                    <div class="form-floating mt-4">
+                        <input type="number" class="form-control" id="floatingInput" placeholder=""
+                            name="year_manufacture" required>
+                        <label for="floatingInput">year of manufacture</label>
+                    </div>
+            </li>
+            <li class="">
+                <ul class="list-group mt-1">
+                    <div class="form-floating mt-4">
+                        <input type="number" class="form-control" id="floatingInput" placeholder="" name="all_seats"
+                            required>
+                        <label for="floatingInput">Total number of seats</label>
+                    </div>
+            </li>
+            <li class="">
+                <ul class="list-group mt-1">
+                    <div class="form-floating mt-4">
+                        <input type="date" class="form-control" id="floatingInput" placeholder="" name="release_date"
+                            required>
+                        <label for="floatingInput">Release date</label>
+                    </div>
+            </li>
+            <li class="">
+                <button type="submit" class="btn btn-primary mt-4">Add video</button>
+            </li>
+        </ul>
+        </ul>
+    </form>
+</div>
+{% endblock content1 %}
+
+{% block content %}
+<ul class="list-group mt-1">
+    <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+        <h5>Users Tible</h5>
+    </li>
+    {% for table in users_tible %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ table }}
+    </li>
+    {% endfor %}
+</ul>
+<ul class="list-group mt-3">
+    <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+        <h5>Currently Filmt Tible</h5>
+    </li>
+    {% for movie_text, movie_id in screening_filmt_tible %}
+    <li class="list-group-item">
+        {{ movie_text }}
+    </li>
+    {% endfor %}
+
+</ul>
+<ul class="list-group mt-3">
+    <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+        <h5>Released Filmt Tible</h5>
+    </li>
+    {% for table in released_filmt_tible %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ table }}
+    </li>
+    {% endfor %}
+</ul>
+<ul class="list-group mt-3">
+    <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+        <h5>History Reservations Tible</h5>
+    </li>
+    {% for table in history_reservations_tible %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ table }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
